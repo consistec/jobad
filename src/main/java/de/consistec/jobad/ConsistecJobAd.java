@@ -32,7 +32,7 @@ public class ConsistecJobAd {
 		
 		return newColleagues;
 		
-		// Find this (working) code at: http://github.com/cboutter/jobad
+		// Find this (working) code at: http://github.com/consistec/jobad
 	}
 	
 	
