@@ -14,6 +14,8 @@ public class ConsistecJobAd {
 		// groovy rubies...
 		
 		return null;
+		
+		// Find this code at: http://github.com/cboutter/jobad
 	}
 
 	private static <T extends Developer> List<T> findDeveloper(Class<T> devClass, 
