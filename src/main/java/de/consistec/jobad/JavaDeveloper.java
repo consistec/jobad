@@ -1,5 +1,5 @@
 package de.consistec.jobad;
 
-public interface JavaDeveloper {
+public interface JavaDeveloper extends Developer {
 
 }
