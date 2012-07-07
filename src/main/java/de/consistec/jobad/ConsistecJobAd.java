@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class ConsistecJobAd {
 	
-	public static List<JavaDeveloper> findNewColleague() {
+	public static List<JavaDeveloper> findNewColleagues() {
 		
 		List<Attribute> positiveAttributes = Arrays.asList(
 				ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_DRIVEN, TEAMPLAYER, OPEN_MINDED);
