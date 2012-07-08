@@ -1,5 +1,7 @@
 package de.consistec.jobad;
 
-public interface Developer {
+import java.util.Set;
 
+public interface Developer {
+	Set<Attribute> getAttributes();
 }
