@@ -1,10 +1,13 @@
-package de.consistec.jobad;
+package de.consistec.jobad.util;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import de.consistec.jobad.domain.Attribute;
+import de.consistec.jobad.domain.Developer;
 
 public final class ScoreUtil {
 

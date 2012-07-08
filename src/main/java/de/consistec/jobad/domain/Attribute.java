@@ -1,4 +1,4 @@
-package de.consistec.jobad;
+package de.consistec.jobad.domain;
 
 public enum Attribute {
 	// Positive

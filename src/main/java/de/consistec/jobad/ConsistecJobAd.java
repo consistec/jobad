@@ -1,7 +1,7 @@
 package de.consistec.jobad;
 
-import static de.consistec.jobad.Attribute.*;
-import static de.consistec.jobad.ScoreUtil.calculateDevScore;
+import static de.consistec.jobad.domain.Attribute.*;
+import static de.consistec.jobad.util.ScoreUtil.calculateDevScore;
 
 import java.util.Collections;
 import java.util.List;
@@ -9,6 +9,11 @@ import java.util.Map;
 import java.util.Set;
 
 import com.google.common.collect.Sets;
+
+import de.consistec.jobad.domain.Attribute;
+import de.consistec.jobad.domain.Developer;
+import de.consistec.jobad.domain.JavaDeveloper;
+import de.consistec.jobad.domain.Knows;
 
 public class ConsistecJobAd {
 	
@@ -42,7 +47,7 @@ public class ConsistecJobAd {
 	
 	private static <T extends Developer> List<T> findDeveloper(Class<T> devClass, 
 			Knows... expectedKnowledge) {
-		// Do some magic in the real world to find developers.
+		// Do some magic in the real world to find developers.     
 		return null;
 	}
-}
+}	
