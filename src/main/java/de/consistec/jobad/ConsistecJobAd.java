@@ -42,7 +42,7 @@ public class ConsistecJobAd {
 	
 	private static <T extends Developer> List<T> findDeveloper(Class<T> devClass, 
 			Knows... expectedKnowledge) {
-		// TODO Auto-generated method stub
+		// Do some magic in the real world to find developers.
 		return null;
 	}
 }
