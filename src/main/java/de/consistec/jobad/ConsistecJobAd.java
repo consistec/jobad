@@ -3,19 +3,21 @@ package de.consistec.jobad;
 import static de.consistec.jobad.Attribute.*;
 import static de.consistec.jobad.ScoreUtil.calculateDevScore;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
+import com.google.common.collect.Sets;
 
 public class ConsistecJobAd {
 	
 	public static List<JavaDeveloper> findNewColleagues() {
 		
-		List<Attribute> positiveAttributes = Arrays.asList(
+		Set<Attribute> positiveAttributes = Sets.newHashSet(
 				ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_DRIVEN, TEAMPLAYER, OPEN_MINDED);
 		
-		List<Attribute> negativeAttributes = Arrays.asList(JOB_HOPPER, LONER);
+		Set<Attribute> negativeAttributes = Sets.newHashSet(JOB_HOPPER, LONER);
 		
 		List<JavaDeveloper> devs = 
 				findDeveloper(JavaDeveloper.class, Knows.JAVA, Knows.ENGLISH);
