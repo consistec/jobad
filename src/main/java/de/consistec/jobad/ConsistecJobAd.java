@@ -1,20 +1,28 @@
 package de.consistec.jobad;
 
-import static de.consistec.jobad.Attribute.*;
+import static de.consistec.jobad.domain.Attribute.*;
+import static de.consistec.jobad.util.ScoreUtil.calculateDevScore;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
+import com.google.common.collect.Sets;
+
+import de.consistec.jobad.domain.Attribute;
+import de.consistec.jobad.domain.Developer;
+import de.consistec.jobad.domain.JavaDeveloper;
+import de.consistec.jobad.domain.Knows;
 
 public class ConsistecJobAd {
 	
 	public static List<JavaDeveloper> findNewColleagues() {
 		
-		List<Attribute> positiveAttributes = Arrays.asList(
+		Set<Attribute> positiveAttributes = Sets.newHashSet(
 				ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_DRIVEN, TEAMPLAYER, OPEN_MINDED);
 		
-		List<Attribute> negativeAttributes = Arrays.asList(JOB_HOPPER, LONER);
+		Set<Attribute> negativeAttributes = Sets.newHashSet(JOB_HOPPER, LONER);
 		
 		List<JavaDeveloper> devs = 
 				findDeveloper(JavaDeveloper.class, Knows.JAVA, Knows.ENGLISH);
@@ -37,15 +45,9 @@ public class ConsistecJobAd {
 	
 	
 	
-	private static <T extends Developer> Map<T, Integer> calculateDevScore(List<T> devs,
-			List<Attribute> positiveAttributes,
-			List<Attribute> negativeAttributes) {
-		return null;
-	}
-
 	private static <T extends Developer> List<T> findDeveloper(Class<T> devClass, 
 			Knows... expectedKnowledge) {
-		// TODO Auto-generated method stub
+		// Do some magic in the real world to find developers.     
 		return null;
 	}
-}
+}	
