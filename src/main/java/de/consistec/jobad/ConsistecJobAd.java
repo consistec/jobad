@@ -1,6 +1,7 @@
 package de.consistec.jobad;
 
 import static de.consistec.jobad.Attribute.*;
+import static de.consistec.jobad.ScoreUtil.calculateDevScore;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -37,12 +38,6 @@ public class ConsistecJobAd {
 	
 	
 	
-	private static <T extends Developer> Map<T, Integer> calculateDevScore(List<T> devs,
-			List<Attribute> positiveAttributes,
-			List<Attribute> negativeAttributes) {
-		return null;
-	}
-
 	private static <T extends Developer> List<T> findDeveloper(Class<T> devClass, 
 			Knows... expectedKnowledge) {
 		// TODO Auto-generated method stub
