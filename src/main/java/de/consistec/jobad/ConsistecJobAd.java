@@ -12,6 +12,7 @@ import com.google.common.collect.Sets;
 
 import de.consistec.jobad.domain.Attribute;
 import de.consistec.jobad.domain.Developer;
+import de.consistec.jobad.domain.Gender;
 import de.consistec.jobad.domain.JavaDeveloper;
 import de.consistec.jobad.domain.Knows;
 
@@ -25,7 +26,7 @@ public class ConsistecJobAd {
 		Set<Attribute> negativeAttributes = Sets.newHashSet(JOB_HOPPER, LONER);
 		
 		List<JavaDeveloper> devs = 
-				findDeveloper(JavaDeveloper.class, Knows.JAVA, Knows.ENGLISH);
+				findDeveloper(JavaDeveloper.class, Gender.BOTH, Knows.JAVA, Knows.ENGLISH);
 		Map<JavaDeveloper, Integer> devScoreCard = 
 				calculateDevScore(devs, positiveAttributes, negativeAttributes);
 		
@@ -45,7 +46,8 @@ public class ConsistecJobAd {
 	
 	
 	
-	private static <T extends Developer> List<T> findDeveloper(Class<T> devClass, 
+	private static <T extends Developer> List<T> findDeveloper(Class<T> devClass,
+			Gender expectedGender,
 			Knows... expectedKnowledge) {
 		// Do some magic in the real world to find developers.     
 		return null;
