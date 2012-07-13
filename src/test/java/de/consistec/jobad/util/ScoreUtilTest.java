@@ -37,6 +37,23 @@ public class ScoreUtilTest {
 		assertEquals(1, devScore.get(dev).intValue());
 	}
 	
-	
+	@Test
+	public void testScoreCalculationForTwoDevs() {
+		Developer dev1 = Mockito.mock(Developer.class);
+		Developer dev2 = Mockito.mock(Developer.class);
+		Set<Attribute> attributes1 = Sets.newHashSet(
+				ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_DRIVEN, LONER);
+		Set<Attribute> attributes2 = Sets.newHashSet(
+				ENTHUSIASTIC, LOVES_CLEAN_CODE, TEAMPLAYER, LONER);
+		when(dev1.getAttributes()).thenReturn(attributes1);
+		when(dev2.getAttributes()).thenReturn(attributes2);
+		
+		Map<Developer, Integer> devScore = ScoreUtil.calculateDevScore(Arrays.asList(dev1, dev2), 
+				positiveAttributes, 
+				negativeAttributes);
+		assertEquals(2, devScore.size());
+		assertEquals(1, devScore.get(dev1).intValue());
+		assertEquals(1, devScore.get(dev2).intValue());
+	}
 
 }
