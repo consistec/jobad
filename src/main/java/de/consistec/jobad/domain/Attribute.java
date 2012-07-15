@@ -4,8 +4,9 @@ public enum Attribute {
   // Positive
   ENTHUSIASTIC,
   LOVES_CLEAN_CODE,
-  SOLUTION_DRIVEN,
+  SOLUTION_ORIENTED,
   TEAMPLAYER,
+  TEST_DRIVEN,
   OPEN_MINDED,
 
   // Negative

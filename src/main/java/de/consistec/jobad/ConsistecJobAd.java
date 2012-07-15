@@ -23,7 +23,7 @@ public class ConsistecJobAd {
   public static List<JavaDeveloper> findNewColleagues() {
 
     Set<Attribute> positiveAttributes = Sets.newHashSet(
-        ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_DRIVEN, TEAMPLAYER, OPEN_MINDED);
+        ENTHUSIASTIC, LOVES_CLEAN_CODE, OPEN_MINDED, SOLUTION_ORIENTED, TEAMPLAYER, TEST_DRIVEN);
 
     Set<Attribute> negativeAttributes = Sets.newHashSet(JOB_HOPPER, LONER);
 

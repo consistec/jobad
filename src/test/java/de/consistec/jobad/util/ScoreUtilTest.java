@@ -21,7 +21,7 @@ import de.consistec.jobad.domain.Experience;
 public class ScoreUtilTest {
 
   private Set<Attribute> positiveAttributes = Sets.newHashSet(
-      ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_DRIVEN, TEAMPLAYER, OPEN_MINDED);
+      ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_ORIENTED, TEAMPLAYER, OPEN_MINDED);
 
   private Set<Attribute> negativeAttributes = Sets.newHashSet(JOB_HOPPER, LONER);
 
@@ -31,7 +31,7 @@ public class ScoreUtilTest {
   public void testScoreCalculationForSingleDev() {
     Developer dev = Mockito.mock(Developer.class);
     Set<Attribute> attributes = Sets.newHashSet(
-        ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_DRIVEN, LONER);
+        ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_ORIENTED, LONER);
         Set<Experience> experience = Sets.newHashSet(JAVA2EE, GWT, MAVEN);
     when(dev.getAttributes()).thenReturn(attributes);
     when(dev.getExperience()).thenReturn(experience);
@@ -49,7 +49,7 @@ public class ScoreUtilTest {
     Developer dev1 = Mockito.mock(Developer.class);
     Developer dev2 = Mockito.mock(Developer.class);
     Set<Attribute> attributes1 = Sets.newHashSet(
-        ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_DRIVEN, LONER);
+        ENTHUSIASTIC, LOVES_CLEAN_CODE, TEST_DRIVEN, LONER);
         Set<Experience> experience1 = Sets.newHashSet(JAVA2EE, GWT);
     Set<Attribute> attributes2 = Sets.newHashSet(
         ENTHUSIASTIC, LOVES_CLEAN_CODE, TEAMPLAYER, LONER);
@@ -64,7 +64,7 @@ public class ScoreUtilTest {
         negativeAttributes,
         plusFactors);
     assertEquals(2, devScore.size());
-    assertEquals(3, devScore.get(dev1).intValue());
+    assertEquals(1, devScore.get(dev1).intValue());
     assertEquals(2, devScore.get(dev2).intValue());
   }
 
