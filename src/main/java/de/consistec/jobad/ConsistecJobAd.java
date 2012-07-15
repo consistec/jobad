@@ -1,5 +1,6 @@
 package de.consistec.jobad;
 
+import static de.consistec.jobad.domain.Amenity.*;
 import static de.consistec.jobad.domain.Attribute.*;
 import static de.consistec.jobad.domain.Experience.*;
 import static de.consistec.jobad.util.ScoreUtil.calculateDevScore;
@@ -11,6 +12,7 @@ import java.util.Set;
 
 import com.google.common.collect.Sets;
 
+import de.consistec.jobad.domain.Amenity;
 import de.consistec.jobad.domain.Attribute;
 import de.consistec.jobad.domain.Developer;
 import de.consistec.jobad.domain.Experience;
@@ -29,10 +31,12 @@ public class ConsistecJobAd {
 
     Set<Experience> plusFactors = Sets.newHashSet(JAVA2EE, MAVEN, EJB3);
 
+    Set<Amenity> amenities = Sets.newHashSet(INNOVATION, RESPONSIBLEPOSITION, VARIETY, FLATHIERARCHY);
+
     List<JavaDeveloper> devs =
         findDeveloper(JavaDeveloper.class, Gender.BOTH, Knows.JAVA, Knows.ENGLISH);
     Map<JavaDeveloper, Integer> devScoreCard =
-        calculateDevScore(devs, positiveAttributes, negativeAttributes, plusFactors);
+        calculateDevScore(devs, positiveAttributes, negativeAttributes, plusFactors, amenities);
 
     List<JavaDeveloper> newColleagues = Collections.<JavaDeveloper>emptyList();
     for (Map.Entry<JavaDeveloper, Integer> entry : devScoreCard.entrySet()) {
