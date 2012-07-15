@@ -14,7 +14,8 @@ import de.consistec.jobad.domain.Developer;
 
 public final class ScoreUtil {
 
-	private static int WEIGHT_NEGATIVE_ATTRIBUTE = 2;
+	private static int WEIGHT_POSITIVE_ATTRIBUTE = 2;
+	private static int WEIGHT_NEGATIVE_ATTRIBUTE = 4;
 	
 	private ScoreUtil() {}
 
@@ -27,7 +28,7 @@ public final class ScoreUtil {
 			SetView<Attribute> matchingPositiveAttributes = intersection(positiveAttributes, dev.getAttributes());
 			SetView<Attribute> matchingNegativeAttributes = intersection(negativeAttributes, dev.getAttributes());
 			
-			int score = matchingPositiveAttributes.size() 
+			int score = WEIGHT_POSITIVE_ATTRIBUTE * matchingPositiveAttributes.size()
 					- (WEIGHT_NEGATIVE_ATTRIBUTE * matchingNegativeAttributes.size());
 			result.put(dev, score);
 		}

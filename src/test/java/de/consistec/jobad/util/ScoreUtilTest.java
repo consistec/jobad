@@ -34,7 +34,7 @@ public class ScoreUtilTest {
 				positiveAttributes, 
 				negativeAttributes);
 		assertEquals(1, devScore.size());
-		assertEquals(1, devScore.get(dev).intValue());
+		assertEquals(2, devScore.get(dev).intValue());
 	}
 	
 	@Test
@@ -52,8 +52,8 @@ public class ScoreUtilTest {
 				positiveAttributes, 
 				negativeAttributes);
 		assertEquals(2, devScore.size());
-		assertEquals(1, devScore.get(dev1).intValue());
-		assertEquals(1, devScore.get(dev2).intValue());
+		assertEquals(2, devScore.get(dev1).intValue());
+		assertEquals(2, devScore.get(dev2).intValue());
 	}
 
 }

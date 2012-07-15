@@ -34,7 +34,7 @@ public class ConsistecJobAd {
 		for (Map.Entry<JavaDeveloper, Integer> entry : devScoreCard.entrySet()) {
 			
 			// Check applicant quality ;)
-			if (entry.getValue() > 3) {
+			if (entry.getValue() > 6) {
 				newColleagues.add(entry.getKey());
 			}
 		}
