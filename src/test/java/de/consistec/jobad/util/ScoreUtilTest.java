@@ -1,6 +1,7 @@
 package de.consistec.jobad.util;
 
 import static de.consistec.jobad.domain.Attribute.*;
+import static de.consistec.jobad.domain.Experience.*;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -15,6 +16,7 @@ import com.google.common.collect.Sets;
 
 import de.consistec.jobad.domain.Attribute;
 import de.consistec.jobad.domain.Developer;
+import de.consistec.jobad.domain.Experience;
 
 public class ScoreUtilTest {
 	
@@ -23,18 +25,23 @@ public class ScoreUtilTest {
 	
 	private Set<Attribute> negativeAttributes = Sets.newHashSet(JOB_HOPPER, LONER);
 
+	private Set<Experience> plusFactors = Sets.newHashSet(JAVA2EE, MAVEN, EJB3);
+
 	@Test
 	public void testScoreCalculationForSingleDev() {
 		Developer dev = Mockito.mock(Developer.class);
 		Set<Attribute> attributes = Sets.newHashSet(
 				ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_DRIVEN, LONER);
+        Set<Experience> experience = Sets.newHashSet(JAVA2EE, GWT, MAVEN);
 		when(dev.getAttributes()).thenReturn(attributes);
+		when(dev.getExperience()).thenReturn(experience);
 		
 		Map<Developer, Integer> devScore = ScoreUtil.calculateDevScore(Arrays.asList(dev), 
 				positiveAttributes, 
-				negativeAttributes);
+                negativeAttributes,
+                plusFactors);
 		assertEquals(1, devScore.size());
-		assertEquals(1, devScore.get(dev).intValue());
+		assertEquals(4, devScore.get(dev).intValue());
 	}
 	
 	@Test
@@ -43,17 +50,22 @@ public class ScoreUtilTest {
 		Developer dev2 = Mockito.mock(Developer.class);
 		Set<Attribute> attributes1 = Sets.newHashSet(
 				ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_DRIVEN, LONER);
+        Set<Experience> experience1 = Sets.newHashSet(JAVA2EE, GWT);
 		Set<Attribute> attributes2 = Sets.newHashSet(
 				ENTHUSIASTIC, LOVES_CLEAN_CODE, TEAMPLAYER, LONER);
+        Set<Experience> experience2 = Sets.newHashSet(GWT);
 		when(dev1.getAttributes()).thenReturn(attributes1);
+		when(dev1.getExperience()).thenReturn(experience1);
 		when(dev2.getAttributes()).thenReturn(attributes2);
+		when(dev2.getExperience()).thenReturn(experience2);
 		
 		Map<Developer, Integer> devScore = ScoreUtil.calculateDevScore(Arrays.asList(dev1, dev2), 
 				positiveAttributes, 
-				negativeAttributes);
+				negativeAttributes,
+                plusFactors);
 		assertEquals(2, devScore.size());
-		assertEquals(1, devScore.get(dev1).intValue());
-		assertEquals(1, devScore.get(dev2).intValue());
+		assertEquals(3, devScore.get(dev1).intValue());
+		assertEquals(2, devScore.get(dev2).intValue());
 	}
 
 }
