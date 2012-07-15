@@ -32,7 +32,7 @@ public class ScoreUtilTest {
     Developer dev = Mockito.mock(Developer.class);
     Set<Attribute> attributes = Sets.newHashSet(
         ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_ORIENTED, LONER);
-        Set<Experience> experience = Sets.newHashSet(JAVA2EE, GWT, MAVEN);
+    Set<Experience> experience = Sets.newHashSet(JAVA2EE, GWT, MAVEN);
     when(dev.getAttributes()).thenReturn(attributes);
     when(dev.getExperience()).thenReturn(experience);
 
@@ -50,10 +50,10 @@ public class ScoreUtilTest {
     Developer dev2 = Mockito.mock(Developer.class);
     Set<Attribute> attributes1 = Sets.newHashSet(
         ENTHUSIASTIC, LOVES_CLEAN_CODE, TEST_DRIVEN, LONER);
-        Set<Experience> experience1 = Sets.newHashSet(JAVA2EE, GWT);
+    Set<Experience> experience1 = Sets.newHashSet(JAVA2EE, GWT);
     Set<Attribute> attributes2 = Sets.newHashSet(
         ENTHUSIASTIC, LOVES_CLEAN_CODE, TEAMPLAYER, LONER);
-        Set<Experience> experience2 = Sets.newHashSet(GWT);
+    Set<Experience> experience2 = Sets.newHashSet(GWT);
     when(dev1.getAttributes()).thenReturn(attributes1);
     when(dev1.getExperience()).thenReturn(experience1);
     when(dev2.getAttributes()).thenReturn(attributes2);
