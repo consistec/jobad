@@ -25,7 +25,7 @@ public class ConsistecJobAd {
     /**
      * Find new developers for consistec
      * @return list of new colleagues
-     * @see <a href="http://www.consistec.de">consistec homepage</a>
+     * @see <a href="http://www.consistec.de/?key=javaJobAd">consistec homepage</a>
      * @see <a href="http://github.com/consistec/jobad">this working code</a>
      */
   public static List<JavaDeveloper> findNewColleagues() {
