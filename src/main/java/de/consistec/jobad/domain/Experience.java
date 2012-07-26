@@ -1,7 +1,7 @@
 package de.consistec.jobad.domain;
 
 public enum Experience {
-    JAVA2EE,
+    JAVAEE,
     MAVEN,
     EJB3,
     GWT,
