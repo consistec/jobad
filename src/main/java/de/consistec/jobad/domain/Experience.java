@@ -5,5 +5,6 @@ public enum Experience {
     MAVEN,
     EJB3,
     GWT,
-    JSF
+    JSF,
+    VCS
 }

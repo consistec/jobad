@@ -15,6 +15,7 @@ import static de.consistec.jobad.domain.Attribute.TEAMPLAYER;
 import static de.consistec.jobad.domain.Experience.EJB3;
 import static de.consistec.jobad.domain.Experience.JAVAEE;
 import static de.consistec.jobad.domain.Experience.MAVEN;
+import static de.consistec.jobad.domain.Experience.VCS;
 import de.consistec.jobad.domain.CandidatePool;
 import de.consistec.jobad.domain.Consistec;
 import de.consistec.jobad.domain.Individuals;
@@ -33,7 +34,7 @@ public class ConsistecJobAd {
 			Consistec.isLookingFor(Individuals.class)
 				.whoAreMostOf(ENTHUSIASTIC, CLEAN_CODE_LOVER, OPEN_MINDED, SOLUTION_ORIENTED, TEAMPLAYER)
 				.whoAreNot(JOB_HOPPER, LONER)
-				.haveExperienceWith(JAVAEE, MAVEN, EJB3)
+				.haveExperienceWith(JAVAEE, MAVEN, EJB3, VCS)
 				.like(INNOVATION, RESPONSIBLE_POSITION, VARIETY, FLATHIERARCHY, AGILE_SWD)
 				.engage();
 		}
