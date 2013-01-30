@@ -1,8 +1,20 @@
 package de.consistec.jobad.util;
 
-import static de.consistec.jobad.domain.Amenity.*;
-import static de.consistec.jobad.domain.Attribute.*;
-import static de.consistec.jobad.domain.Experience.*;
+import static de.consistec.jobad.domain.Amenity.INNOVATION;
+import static de.consistec.jobad.domain.Amenity.RESPONSIBLEPOSITION;
+import static de.consistec.jobad.domain.Amenity.VARIETY;
+import static de.consistec.jobad.domain.Attribute.ENTHUSIASTIC;
+import static de.consistec.jobad.domain.Attribute.JOB_HOPPER;
+import static de.consistec.jobad.domain.Attribute.LONER;
+import static de.consistec.jobad.domain.Attribute.LOVES_CLEAN_CODE;
+import static de.consistec.jobad.domain.Attribute.OPEN_MINDED;
+import static de.consistec.jobad.domain.Attribute.SOLUTION_ORIENTED;
+import static de.consistec.jobad.domain.Attribute.TEAMPLAYER;
+import static de.consistec.jobad.domain.Attribute.TEST_DRIVEN;
+import static de.consistec.jobad.domain.Experience.EJB3;
+import static de.consistec.jobad.domain.Experience.GWT;
+import static de.consistec.jobad.domain.Experience.JAVAEE;
+import static de.consistec.jobad.domain.Experience.MAVEN;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -27,7 +39,7 @@ public class ScoreUtilTest {
 
   private Set<Attribute> negativeAttributes = Sets.newHashSet(JOB_HOPPER, LONER);
 
-  private Set<Experience> plusFactors = Sets.newHashSet(JAVA2EE, MAVEN, EJB3);
+  private Set<Experience> plusFactors = Sets.newHashSet(JAVAEE, MAVEN, EJB3);
 
   private Set<Amenity> amenities = Sets.newHashSet(INNOVATION, RESPONSIBLEPOSITION);
 
@@ -36,7 +48,7 @@ public class ScoreUtilTest {
     Developer dev = Mockito.mock(Developer.class);
     Set<Attribute> attributes = Sets.newHashSet(
         ENTHUSIASTIC, LOVES_CLEAN_CODE, SOLUTION_ORIENTED, LONER);
-    Set<Experience> experience = Sets.newHashSet(JAVA2EE, GWT, MAVEN);
+    Set<Experience> experience = Sets.newHashSet(JAVAEE, GWT, MAVEN);
     Set<Amenity> lookingFor = Sets.newHashSet(RESPONSIBLEPOSITION, VARIETY);
     when(dev.getAttributes()).thenReturn(attributes);
     when(dev.getExperience()).thenReturn(experience);
@@ -57,7 +69,7 @@ public class ScoreUtilTest {
     Developer dev2 = Mockito.mock(Developer.class);
     Set<Attribute> attributes1 = Sets.newHashSet(
         ENTHUSIASTIC, LOVES_CLEAN_CODE, TEST_DRIVEN, LONER);
-    Set<Experience> experience1 = Sets.newHashSet(JAVA2EE, GWT);
+    Set<Experience> experience1 = Sets.newHashSet(JAVAEE, GWT);
     Set<Amenity> lookingFor1 = Sets.newHashSet(RESPONSIBLEPOSITION, VARIETY);
     Set<Attribute> attributes2 = Sets.newHashSet(
         ENTHUSIASTIC, LOVES_CLEAN_CODE, TEAMPLAYER, LONER);

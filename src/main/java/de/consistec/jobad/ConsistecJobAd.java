@@ -1,8 +1,20 @@
 package de.consistec.jobad;
 
-import static de.consistec.jobad.domain.Amenity.*;
-import static de.consistec.jobad.domain.Attribute.*;
-import static de.consistec.jobad.domain.Experience.*;
+import static de.consistec.jobad.domain.Amenity.FLATHIERARCHY;
+import static de.consistec.jobad.domain.Amenity.INNOVATION;
+import static de.consistec.jobad.domain.Amenity.RESPONSIBLEPOSITION;
+import static de.consistec.jobad.domain.Amenity.VARIETY;
+import static de.consistec.jobad.domain.Attribute.ENTHUSIASTIC;
+import static de.consistec.jobad.domain.Attribute.JOB_HOPPER;
+import static de.consistec.jobad.domain.Attribute.LONER;
+import static de.consistec.jobad.domain.Attribute.LOVES_CLEAN_CODE;
+import static de.consistec.jobad.domain.Attribute.OPEN_MINDED;
+import static de.consistec.jobad.domain.Attribute.SOLUTION_ORIENTED;
+import static de.consistec.jobad.domain.Attribute.TEAMPLAYER;
+import static de.consistec.jobad.domain.Attribute.TEST_DRIVEN;
+import static de.consistec.jobad.domain.Experience.EJB3;
+import static de.consistec.jobad.domain.Experience.JAVAEE;
+import static de.consistec.jobad.domain.Experience.MAVEN;
 import static de.consistec.jobad.util.ScoreUtil.calculateDevScore;
 
 import java.util.Collections;
@@ -35,7 +47,7 @@ public class ConsistecJobAd {
 
     Set<Attribute> negativeAttributes = Sets.newHashSet(JOB_HOPPER, LONER);
 
-    Set<Experience> plusFactors = Sets.newHashSet(JAVA2EE, MAVEN, EJB3);
+    Set<Experience> plusFactors = Sets.newHashSet(JAVAEE, MAVEN, EJB3);
 
     Set<Amenity> amenities = Sets.newHashSet(INNOVATION, RESPONSIBLEPOSITION, VARIETY, FLATHIERARCHY);
 
