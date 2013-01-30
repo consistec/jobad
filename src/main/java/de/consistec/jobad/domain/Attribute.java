@@ -3,7 +3,7 @@ package de.consistec.jobad.domain;
 public enum Attribute {
   // Positive
   ENTHUSIASTIC,
-  LOVES_CLEAN_CODE,
+  CLEAN_CODE_LOVER,
   SOLUTION_ORIENTED,
   TEAMPLAYER,
   TEST_DRIVEN,

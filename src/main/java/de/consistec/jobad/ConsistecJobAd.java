@@ -1,13 +1,14 @@
 package de.consistec.jobad;
 
+import static de.consistec.jobad.domain.Amenity.AGILE_SWD;
 import static de.consistec.jobad.domain.Amenity.FLATHIERARCHY;
 import static de.consistec.jobad.domain.Amenity.INNOVATION;
-import static de.consistec.jobad.domain.Amenity.RESPONSIBLEPOSITION;
+import static de.consistec.jobad.domain.Amenity.RESPONSIBLE_POSITION;
 import static de.consistec.jobad.domain.Amenity.VARIETY;
+import static de.consistec.jobad.domain.Attribute.CLEAN_CODE_LOVER;
 import static de.consistec.jobad.domain.Attribute.ENTHUSIASTIC;
 import static de.consistec.jobad.domain.Attribute.JOB_HOPPER;
 import static de.consistec.jobad.domain.Attribute.LONER;
-import static de.consistec.jobad.domain.Attribute.LOVES_CLEAN_CODE;
 import static de.consistec.jobad.domain.Attribute.OPEN_MINDED;
 import static de.consistec.jobad.domain.Attribute.SOLUTION_ORIENTED;
 import static de.consistec.jobad.domain.Attribute.TEAMPLAYER;
@@ -26,15 +27,17 @@ import com.google.common.collect.Sets;
 
 import de.consistec.jobad.domain.Amenity;
 import de.consistec.jobad.domain.Attribute;
+import de.consistec.jobad.domain.Consistec;
 import de.consistec.jobad.domain.Developer;
 import de.consistec.jobad.domain.Experience;
 import de.consistec.jobad.domain.Gender;
+import de.consistec.jobad.domain.Individuals;
 import de.consistec.jobad.domain.JavaDeveloper;
 import de.consistec.jobad.domain.Knows;
 
 public class ConsistecJobAd {
 
-    /**
+	/**
      * Find new developers for consistec
      * @return list of new colleagues
      * @see <a href="http://www.consistec.de/?key=javaJobAd">consistec homepage</a>
@@ -42,14 +45,23 @@ public class ConsistecJobAd {
      */
   public static List<JavaDeveloper> findNewColleagues() {
 
+	  // Draft, remove unneeded stuff afterwards
+	  Consistec.isLookingFor(Individuals.class)
+	  	.whoAreMostOf(ENTHUSIASTIC, CLEAN_CODE_LOVER, OPEN_MINDED, SOLUTION_ORIENTED, TEAMPLAYER)
+	  	.whoAreNot(JOB_HOPPER, LONER)
+	  	.haveExperienceWith(JAVAEE, MAVEN, EJB3)
+	  	.like(INNOVATION, RESPONSIBLE_POSITION, VARIETY, FLATHIERARCHY, AGILE_SWD);
+
+
+
     Set<Attribute> positiveAttributes = Sets.newHashSet(
-        ENTHUSIASTIC, LOVES_CLEAN_CODE, OPEN_MINDED, SOLUTION_ORIENTED, TEAMPLAYER, TEST_DRIVEN);
+        ENTHUSIASTIC, CLEAN_CODE_LOVER, OPEN_MINDED, SOLUTION_ORIENTED, TEAMPLAYER, TEST_DRIVEN);
 
     Set<Attribute> negativeAttributes = Sets.newHashSet(JOB_HOPPER, LONER);
 
     Set<Experience> plusFactors = Sets.newHashSet(JAVAEE, MAVEN, EJB3);
 
-    Set<Amenity> amenities = Sets.newHashSet(INNOVATION, RESPONSIBLEPOSITION, VARIETY, FLATHIERARCHY);
+    Set<Amenity> amenities = Sets.newHashSet(INNOVATION, RESPONSIBLE_POSITION, VARIETY, FLATHIERARCHY);
 
     List<JavaDeveloper> devs =
         findDeveloper(JavaDeveloper.class, Gender.BOTH, Knows.JAVA, Knows.ENGLISH);

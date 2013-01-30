@@ -2,7 +2,8 @@ package de.consistec.jobad.domain;
 
 public enum Amenity {
     INNOVATION,
-    RESPONSIBLEPOSITION,
+    RESPONSIBLE_POSITION,
     VARIETY,
-    FLATHIERARCHY
+    FLATHIERARCHY,
+    AGILE_SWD
 }
