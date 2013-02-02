@@ -16,6 +16,7 @@ import static de.consistec.jobad.domain.Experience.EJB3;
 import static de.consistec.jobad.domain.Experience.JAVAEE;
 import static de.consistec.jobad.domain.Experience.MAVEN;
 import static de.consistec.jobad.domain.Experience.VCS;
+import static de.consistec.jobad.domain.TimeUnit.YEARS;
 import de.consistec.jobad.domain.CandidatePool;
 import de.consistec.jobad.domain.Consistec;
 import de.consistec.jobad.domain.Individuals;
@@ -33,6 +34,7 @@ public class ConsistecJobAd {
 		while (CandidatePool.isNotEmpty()) {
 			Consistec.isLookingFor(Individuals.class)
 				.whoAreMostOf(ENTHUSIASTIC, CLEAN_CODE_LOVER, OPEN_MINDED, SOLUTION_ORIENTED, TEAMPLAYER)
+				.withJobExperience(3, YEARS)
 				.whoAreNot(JOB_HOPPER, LONER)
 				.haveExperienceWith(JAVAEE, MAVEN, EJB3, VCS)
 				.like(INNOVATION, RESPONSIBLE_POSITION, VARIETY, FLATHIERARCHY, AGILE_SWD)
