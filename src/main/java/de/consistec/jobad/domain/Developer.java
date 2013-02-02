@@ -13,5 +13,7 @@ public interface Developer {
 	Developer whoAreNot(Attribute... attributes);
 	Developer haveExperienceWith(Experience... exp);
 	Developer like(Amenity... amenities);
+	Developer withJobExperience(int amount, TimeUnit unit);
 	void engage();
+
 }
